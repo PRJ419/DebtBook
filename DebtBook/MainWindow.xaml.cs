@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using DebtBook.ViewModels;
 
 namespace DebtBook
 {
@@ -10,7 +11,7 @@ namespace DebtBook
         public MainWindow()
         {
             InitializeComponent();
-            DataContext = new ViewModelLocator().GetMainWindowViewModel();
+            DataContext = new MainWindowViewModel(new Persons());
         }
     }
 }

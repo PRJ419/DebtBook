@@ -7,7 +7,6 @@ namespace DebtBook.ViewModels
 {
     public class MainWindowViewModel : BindableBase, IViewModel
     {
-        public INavigationService NavigationService { get; set; }
         public Persons PersonList { get; set; }
 
         private ViewModelLocator _viewModelLocator;
@@ -30,11 +29,11 @@ namespace DebtBook.ViewModels
         private ICommand _showAddDebtorCommand;
 
         public ICommand ShowAddDebtorCommand => _showAddDebtorCommand ??
-                                                (_showAddDebtorCommand = new DelegateCommand(OnShowDebtor));
+                                                (_showAddDebtorCommand = new DelegateCommand(OnAddDebtor));
 
-        public void OnShowDebtor()
+        public void OnAddDebtor()
         {
-            _viewModelLocator.GetAddDebtorViewModel("AddDebtor", PersonList);            
+            _viewModelLocator.AddDebtorViewModel("AddDebtor", PersonList);            
         }
 
         private ICommand _showCheckDebtCommand;
@@ -44,7 +43,7 @@ namespace DebtBook.ViewModels
 
         public void OnShowCheckDebt()
         {
-            _viewModelLocator.GetCheckDebtViewModel("CheckDebt", CurrentPerson);
+            _viewModelLocator.CheckDebtViewModel("CheckDebt", CurrentPerson);
         }
 
     }

@@ -2,12 +2,7 @@
 
 namespace DebtBook
 {
-    public interface INavigationService
-    {
-        void Show(IViewModel viewModel, string id);
-    }
-
-    public class NavigationService : INavigationService
+    public class NavigationService
     {
         public void Show(IViewModel viewModel, string id)
         {
