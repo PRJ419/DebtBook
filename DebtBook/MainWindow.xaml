@@ -4,7 +4,7 @@
          Height="500" Width="300">
 
     <StackPanel Margin="10">
-        <Label Content="Depts" FontSize="36" VerticalAlignment="Center" HorizontalContentAlignment="Center"/>
+        <Label Content="Debts" FontSize="36" VerticalAlignment="Center" HorizontalContentAlignment="Center"/>
         <ListView  SelectedItem="{Binding CurrentPerson}"  ItemsSource="{Binding PersonList}">
             <ListView.View>
                 <GridView>
@@ -13,7 +13,7 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        <Button Content="Add new debtor" FontSize="22" Command="{Binding ShowAddDebtorCommand}" Margin="30"></Button>
+        <Button Content="Add new debitor" FontSize="22" Command="{Binding ShowAddDebtorCommand}" Margin="30"></Button>
         <Button Content="Check debt" FontSize="22" Margin="30,0" Command="{Binding ShowCheckDebtCommand}"></Button>
     </StackPanel>
 

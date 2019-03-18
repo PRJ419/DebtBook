@@ -38,6 +38,7 @@ namespace DebtBook.ViewModels
         public void OnAddDept()
         {
             Person.Debts.Add(new Debt(Amount, Time));
+            Person.CollectiveDebt += Amount;
         }
     }
 }
