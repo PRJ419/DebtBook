@@ -11,13 +11,13 @@ namespace DebtBook
             NavigationService = new NavigationService();
         }
 
-        public void AddDebtorViewModel(string id, Persons persons)
+        public void GetAddDebtorViewModel(string id, Persons persons)
         {
             var viewModel = new AddDebtorViewModel(persons);
             NavigationService.Show(viewModel, id);
         }
 
-        public void CheckDebtViewModel(string id, Person person)
+        public void GetCheckDebtViewModel(string id, Person person)
         {
             var viewmodel = new CheckDebtViewModel(person);
             NavigationService.Show(viewmodel,id);
