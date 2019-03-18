@@ -10,6 +10,8 @@ namespace DebtBook.ViewModels
         public INavigationService NavigationService { get; set; }
         public Persons PersonList { get; set; }
 
+        private ViewModelLocator _viewModelLocator;
+
         private Person _currentPerson = null;
 
         public Person CurrentPerson
@@ -20,9 +22,7 @@ namespace DebtBook.ViewModels
 
         public MainWindowViewModel(Persons persons)
         {
-            NavigationService = new NavigationService();
-
-            if(PersonList == null)
+            _viewModelLocator = new ViewModelLocator();            
             PersonList = persons;
             CurrentPerson = PersonList[0];
         }
@@ -34,8 +34,7 @@ namespace DebtBook.ViewModels
 
         public void OnShowDebtor()
         {
-            var window = new AddDebtorViewModel(PersonList);
-            NavigationService.Show(window, "AddDebtor");
+            _viewModelLocator.GetAddDebtorViewModel("AddDebtor", PersonList);            
         }
 
         private ICommand _showCheckDebtCommand;
@@ -45,8 +44,7 @@ namespace DebtBook.ViewModels
 
         public void OnShowCheckDebt()
         {
-            var window = new CheckDebtViewModel(_currentPerson);
-            NavigationService.Show(window, "CheckDebt");
+            _viewModelLocator.GetCheckDebtViewModel("CheckDebt", CurrentPerson);
         }
 
     }

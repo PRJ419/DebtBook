@@ -10,7 +10,7 @@ namespace DebtBook
         public MainWindow()
         {
             InitializeComponent();
-            DataContext = new ViewModelLocator().GetViewModel();
+            DataContext = new ViewModelLocator().GetMainWindowViewModel();
         }
     }
 }
