@@ -33,7 +33,7 @@ namespace DebtBook.ViewModels
 
         public void OnAddDebtor()
         {
-            _viewModelLocator.GetAddDebtorViewModel("AddDebtor", PersonList);            
+            _viewModelLocator.SetAddDebtorViewModel("AddDebtor", PersonList);            
         }
 
         private ICommand _showCheckDebtCommand;
@@ -43,7 +43,7 @@ namespace DebtBook.ViewModels
 
         public void OnShowCheckDebt()
         {
-            _viewModelLocator.GetCheckDebtViewModel("CheckDebt", CurrentPerson);
+            _viewModelLocator.SetCheckDebtViewModel("CheckDebt", CurrentPerson);
         }
 
     }
